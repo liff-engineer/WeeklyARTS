@@ -185,6 +185,42 @@ struct Derived : Base<Derived>
 # Share - in-place construction(C++如何追求极致性能)
 C++中的“原地构造”技术及其应用,以及为什么建议使用``emplace_back``方法。
 
+在查看 **optional** 实现时了解到一个概念-`in-place construction`,才了解到原来完整的**new expression**如下：
+```
+//第一种
+::(optional) new (placement_params)(optional) ( type ) initializer(optional)	
+//第二种
+::(optional) new (placement_params)(optional) type initializer(optional)	
+```
+别的都见过,这个 **placement_params**没见过。
+
+提供 **placement_params**的`allocation`方法被称为 **placement new**: **placement_params**作为参数传递给标准`allocation`方法 `void* operator new(std::size_t,void*)`,而这个方法只是直接返回了第二个参数。
+
+**placement new**用来在已申请内存中构造对象,参见如下示例：
+```C++
+char* ptr = new char[sizeof(T)]; //申请内存
+T* tptr = new(ptr) T;  //在已申请的内存中构造T
+tptr->~T();  //析构,注意不能delete tptr
+delete[] ptr;
+```
+
+以上示例展示了其用法,需要注意的是,如果使用`delete`析构,会释放内存,但是`T`构造时没有申请内存,所以不能用`delete`析构`T`,而是要主动调用`T`的析构函数完成析构即可。
+
+那么为什么C++申请内存都这么复杂?我们可以思考一下其应用场景：
+- 内存重复利用
+
+通过new等方式申请了一段内存,可以使用 **placement new**来重复利用该内存而不需要每次都重新申请
+
+- 减少构造次数
+
+C++有构造、复制构造、移动构造、拷贝赋值、移动赋值等等，这些构造方法有不同的应用场景,如果需要向容器里添加一个新的对象,通常是构造完成后在添加到容器里,这将是一个赋值操作,虽然有移动赋值,但是,如果能直接构造到目标位置岂不更省操作?
+
+针对`内存重复利用`的场景,C++17标准里的`std::variant`非常适合使用,变体这种类型只是能够存储各种类型,但是同一时刻只能存储一种类型,那么只需要申请一个足够大的内存(各种类型中内存占用最大),存储新类型值时先析构之前的值,然后再原地构造即可,即不需要占用大量内存,也能做到类型安全。
+
+针对`减少构造次数`的场景,标准库里容器的`emplace`和`emplace_back`等函数簇就是其实际应用,这些函数簇传递的参数就是构造用参数！在插入对象时仅仅需要一次构造,不再需要拷贝赋值等等操作,读过[Effective Modern C++](https://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996/),或者其它`Guidelines`,或许记得有一条建议是使用容器的`emplace`等方法,原因就在于此。
+
+从中可以看到,C++确确实实给追求性能的开发者提供了各种各样的能力。
+
 参考：
 - [new expression](https://en.cppreference.com/w/cpp/language/new)
 - [optional lite - A single-file header-only version of a C++17-like optional, a nullable object for C++98, C++11 and later](https://github.com/martinmoene/optional-lite)
