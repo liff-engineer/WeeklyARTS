@@ -6,3 +6,4 @@
 4. [Generic C++ delegates](https://nikitablack.github.io/2016/04/12/Generic-C-delegates.html)
 5. [Fast delegates implementation](https://github.com/mamedev/delegates)
 6. [Impossibly fast delegate in C++11](https://codereview.stackexchange.com/questions/14730/impossibly-fast-delegate-in-c11)
+7. [Implementing function_view is harder than you might think](https://foonathan.net/blog/2017/01/20/function-ref-implementation.html)
