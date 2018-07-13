@@ -6,6 +6,7 @@
 4. [Generic C++ delegates](https://nikitablack.github.io/2016/04/12/Generic-C-delegates.html)
 5. [Fast delegates implementation](https://github.com/mamedev/delegates)
 6. [Impossibly fast delegate in C++11](https://codereview.stackexchange.com/questions/14730/impossibly-fast-delegate-in-c11)
+<<<<<<< HEAD
 
 ## 美好的旧日时光
 
@@ -275,3 +276,6 @@ private:
 由于`std::function`自身存在的`overhead`,因而有人提出了`[function_ref](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0792r0.html)`这种类似于`string_view`的函数引用,自身不是函数拥有者,以此来避免不必要的成本,但是也会带来生命周期等等各种情况,使得其应用非常局限,对开发者提出了"过高"的要求,我对这种方案并不看好。
 
 但是,根据演讲中所提到的应用场景,这种`overhead`确实不能忍受,为什么会需要学习模板、元编程等技巧,无非是在那些真正需要追求极高性能,不希望有不必要的损耗时,能够有对应的解决方案。
+=======
+7. [Implementing function_view is harder than you might think](https://foonathan.net/blog/2017/01/20/function-ref-implementation.html)
+>>>>>>> f76cdea13405b99d0139064ecc12cea071bf580a
