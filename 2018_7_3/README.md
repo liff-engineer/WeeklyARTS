@@ -6,7 +6,9 @@
 
 ## Review
 
-## Technique
+## Technique [ADL](ADL.md)
+
+聊一聊C++中常常讲到,或者源代码中写的ADL是什么意思,怎么使用。
 
 ## Share 嵌入式系统-"被遗忘的角落"?
 
