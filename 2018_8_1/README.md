@@ -36,7 +36,7 @@
 
 ## Share [尽信书不如无书](AboutEffectiveCppItem36.md)
 
-《Effect C++》中说到:
+《Effective  C++》中说到:
 >Item 36: Never redefine an inherited non-virtual function.
 
 这是我们在使用中都应当遵循的原则么? 我的答案：是，但是要分情况。

@@ -57,7 +57,7 @@ struct user_result_t:public result_t
 
 ## 问题来了
 
-但是熟读《Effect C++》的朋友可能看出了问题,在书中条目36:
+但是熟读《Effective  C++》的朋友可能看出了问题,在书中条目36:
 
 >Item 36: Never redefine an inherited non-virtual function.
 
@@ -80,7 +80,7 @@ void example(){
 
 ## 怎么解决
 
-《Effect C++》中条目36中说得很明白：**Never redefine**;而原始设计就是想要提供这样的重用和扩展,是设计出了问题?
+《Effective  C++》中条目36中说得很明白：**Never redefine**;而原始设计就是想要提供这样的重用和扩展,是设计出了问题?
 
 ### 解决方法:用多态
 
