@@ -60,9 +60,13 @@ int rangeBitwiseAnd(int m, int n) {
 }
 ```
 
-## Reivew
+## Reivew [C++20的Contracts](AboutContracts.md)
+
+对C++20的`contract`标准提案的解读。
 
 ## Technique [C++ Detection Idiom](CppDetectionIdiom.md)
+
+在C++中如何编译期判断类型是否有特定的成员函数和变量。
 
 ## Share 关于天朝日常踢皮球的一些想法
 
