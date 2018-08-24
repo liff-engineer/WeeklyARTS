@@ -8,6 +8,8 @@
 
 ## Reivew
 
-## Technique
+## Technique [如何获取C++类型的字符串表示](ExploringCppTypes.md)
+
+C++相比其它语言缺少反射机制,那么需要获取类型对应的字符串表示该如何去做?这里展示了几种方法。
 
 ## Share
