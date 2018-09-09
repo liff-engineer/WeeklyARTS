@@ -4,7 +4,9 @@
 - 正在"开发"中的Visual C++工程"零配置"方案
 - 《Effective C++》的作者Scott Meyers宣布不再修订书中的技术错误,为什么?有什么值得思考的?
 
-## Algorithm
+## Algorithm [回溯法03](Backtracking03.md)
+
+加上本周连续三周完成了1/3的回溯法题目,可以告一段落,继续其他类型的算法题目了。
 
 ## Reivew [Visual C++ Team关于std::string_view的文章](string_view.md)
 
