@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 初始动态规划算法
+- 坚持3个月每周 **ARTS** 所收获的
 - 正在"开发"中的Visual C++工程"零配置"方案
 
 ## Algorithm [初始动态规划算法](DP01.md)
