@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - `std::any`
+- 安利`JSON for Modern C++`
 - 我对坚持ARTS的看法
 
 ## Algorithm [413. Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
@@ -57,7 +58,9 @@ int numberOfArithmeticSlices(vector<int>& A) {
 
 Visual C++ Team针对C++17新词汇类型之`std::any`的介绍。
 
-## Technique
+## Technique [JSON for Modern C++](json.md)
+
+JSON for Modern C++ 刚刚release了3.3.0版,最近使用到了这个库,实在太好用了,忍不住要安利下.
 
 ## Share 我对坚持ARTS的看法
 
