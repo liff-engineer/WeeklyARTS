@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 动态规划一题
+- Qt容器还是STL容器?
 - Range-v3入门
 
 ## Algorithm [712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings)
@@ -60,7 +61,9 @@ int minimumDeleteSum(string s1, string s2) {
 
 看来动态规划的套路是这样的,以前easy是因为只有一维,现在中等难度的是二维,不过背后思路还是一样,关键是规律/子问题的界定。
 
-## Review [C++ Performance: Common Wisdoms and Common “Wisdoms”](http://ithare.com/c-performance-common-wisdoms-and-common-wisdoms/)
+## Review [探索Qt容器](QtContainers.md)
+
+Qt容器还是STL容器?
 
 ## Technique [Range-v3 入门](RangeV3.md)
 
