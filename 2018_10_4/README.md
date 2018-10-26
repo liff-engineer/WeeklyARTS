@@ -16,6 +16,10 @@
 
 - [INSTANTIATIONS MUST GO!](https://www.yumpu.com/en/document/view/46723598/instantiations-must-go)
 
+- Modern Template Metaprogramming:A Compendium
+
 ## Technique
 
-## Share
+[P1095R0/N2289: Zero overhead deterministic failure](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2289.pdf)
+
+## Share [Inheritance vs std::variant](https://cpptruths.blogspot.com/2018/02/inheritance-vs-stdvariant-based.html)
