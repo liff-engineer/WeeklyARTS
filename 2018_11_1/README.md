@@ -3,6 +3,7 @@
 - 动态规划一题
 - C++的初始化
 - 展开`std::tuple`
+- 如何提高新版本C++的使用率?为什么会有这个问题
 
 ## Algorithm [931. Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/)
 
@@ -74,7 +75,44 @@ C++11引入了统一初始化,为什么,会带来那些改变?
 
 如何展开`std::tuple`?又有什么作用?
 
-## Share
+## Share [如何提高新版本C++的使用率?为什么会有这个问题](https://www.reddit.com/r/cpp/comments/9uf0hg/askcpp_how_are_we_going_to_improve_the_adoption/)
+
+用C++的朋友,你现在在使用C++98、C++03、C++11、C++14、C++17还是C++20?
+
+看到了reddit上的讨论,在公司使用新的C++标准版本如此艰辛,不由得想起自己现在的境况:现在工作中依然在使用Visual Studio 2010,也就是带有部分C++11特性的C++03版本,而同事的代码还处在C++98时代,掐指一算这都2018年了,用20年前的标准写代码,还有部分同事用的是带类的C......而我个人搞的项目使用的是C++17.
+
+你说能有啥变化?且听我给你说说:
+
+- 统一初始化
+- 智能指针
+- `Rule of Zero`
+- `std::any`、`std::optional`、`std::variant`
+- SFINAE
+- `enum class`
+- `lambda`
+- 模板元编程
+- `std::file_system`
+- `std::thread`
+- `range-for`
+- `AAA - Almost always auto`
+- 可变参数模板
+- 结构体绑定
+- ......
+
+新版本的C++在表达能力、安全性、性能方面均能够得到提升。
+
+可是你在工作中为什么不能使用? 我觉得排除外部因素,可能有以下原因:
+
+1. 没能领会到现代C++的魅力
+2. 即使C++向后兼容,也不能支持"你们"无缝升级
+
+而第二个原因是需要好好反思的,为什么语言能够向后兼容,切换个语言版本却那么艰辛?是不是自动化不够?导致升级编译器担惊受怕,写得破代码新版编译器能够识别出更多潜在错误导致处理起来比较繁琐?
+
+很多C++使用者耗费了大量时间去钻研奇技淫巧,而不能好好地用一用C++标准委员会付出那么多时间和精力为开发者提供的更好的C++语言,然后再出去说C++太复杂,学起来太难,要换别的语言?
+
+> C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it.
+
+现在C++在向好的方向发展,而你呢?
 
 ## TODO
 
