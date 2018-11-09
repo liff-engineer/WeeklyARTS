@@ -51,8 +51,34 @@ int findLongestChain(vector<vector<int>>& pairs) {
 
 ## Review
 
+- [Demystifying constexpr](https://blog.quasardb.net/demystifying-constexpr/)
+- [constexpr ALL the Things!](https://www.youtube.com/watch?v=PJwd4JLYJJY&list=PLHTh1InhhwT6bwIpRk0ZbCA0N2p1taxd6&index=15)
+
 ## Technique [C++中事件分发模板实现](EventDispatch.md)
 
 偶然看到的一些代码片段,事件分发在C++中竟然有这么多模板实现,语言愈发强大了.
 
-## Share
+## Share C++"专家"新特性是否"不实用"?
+
+C++17标准已经发布了,看一看C++11、C++14、C++17的新特性,有多少是给“专家”使用的模板新特性? 对于普通开发者是否实用? 
+
+在广大普通开发者中呼声比较高的`module`、`network`等等依然还要等待,有不少人对此表示失望,C++标准委员会的人是否居庙堂之高,已经不知道底层疾苦了?
+
+我觉得事情并非如此,这些新特性能够给库开发者提供足够好的支持,从而影响到普通开发者,譬如`range-v3`这种,给普通开发者带来多少便利?
+
+## TODO
+
+- [constexpr specifier](https://en.cppreference.com/w/cpp/language/constexpr)
+- [Member templates](https://en.cppreference.com/w/cpp/language/member_template#Conversion_function_templates)
+- [user-defined conversion](https://en.cppreference.com/w/cpp/language/cast_operator)
+- [Andrei Alexandrescu “Expect the expected”](https://www.youtube.com/watch?v=PH4WBuE1BHI)
+
+- [C++ METAPROGRAMMING: EVOLUTIONAND FUTURE DIRECTIONS](http://www.meeting-cpp.de/tl_files/mcpp/2016/Louis%20Dionne%20-%20c++%20metaprogramming%20-%20evolution%20and%20future%20directions.pdf)
+
+- [std::variant and the Power of Pattern Matching](https://meetingcpp.com/2018/Talks/items/std__variant_and_the_Power_of_Pattern_Matching.html)
+
+- [Pointers to Member Functions](https://isocpp.org/wiki/faq/pointers-to-members#memfnptr-vs-fnptr-more)
+
+- ["Alias template to avoid ugly syntax"](https://twitter.com/meetingcpp/status/1029797123502563328)
+
+- [Pointers to members](https://en.cppreference.com/w/cpp/language/pointer#Pointers_to_data_members)
