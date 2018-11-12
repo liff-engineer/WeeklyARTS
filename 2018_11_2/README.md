@@ -1,7 +1,9 @@
 # Weekly ARTS
 
 - 动态规划一题
+- 解密`constexpr`
 - C++中事件分发模板实现
+- C++"专家"新特性是否"不实用"?
 
 ## Algorithm [646. Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/)
 
@@ -49,7 +51,9 @@ int findLongestChain(vector<vector<int>>& pairs) {
 }
 ```
 
-## Review
+## Review [解密`constexpr`](constexpr.md)
+
+C++11和C++14带来了大量新特性,其中`auto`、`lamda`及右值引用等是大家比较关注和经常使用的,而对于模板相关新特性则应用较少,这里对`constexpr`进行了讲解.
 
 - [Demystifying constexpr](https://blog.quasardb.net/demystifying-constexpr/)
 - [constexpr ALL the Things!](https://www.youtube.com/watch?v=PJwd4JLYJJY&list=PLHTh1InhhwT6bwIpRk0ZbCA0N2p1taxd6&index=15)
@@ -64,7 +68,9 @@ C++17标准已经发布了,看一看C++11、C++14、C++17的新特性,有多少�
 
 在广大普通开发者中呼声比较高的`module`、`network`等等依然还要等待,有不少人对此表示失望,C++标准委员会的人是否居庙堂之高,已经不知道底层疾苦了?
 
-我觉得事情并非如此,这些新特性能够给库开发者提供足够好的支持,从而影响到普通开发者,譬如`range-v3`这种,给普通开发者带来多少便利?
+我觉得事情并非如此,这些新特性能够给库开发者提供足够好的支持,从而影响到普通开发者,譬如`range-v3`这种,给普通开发者带来多少便利?[JSON for Modern C++](https://nlohmann.github.io/json/)可以有多好用?
+
+C++语言变得越来越复杂,有其历史原因和未来发展的考量,你并不追求成为C++专家,你并不关心这些"专家"新特性,但是你也能够从中获取非常大的益处.
 
 ## TODO
 
