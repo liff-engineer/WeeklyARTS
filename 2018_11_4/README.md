@@ -1,8 +1,11 @@
 # Weekly ARTS
 
+- 模板元编程的新面貌
+- 模板元编程应用之结构体与数据库记录直接映射
+
 ## Algorithm
 
-## Review
+## Review [模板元编程的新面貌](tmp.md)
 
 ## Technique [模板元编程应用之结构体与数据库记录直接映射](StructVSDBInterface.md)
 
