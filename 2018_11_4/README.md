@@ -15,3 +15,12 @@
 
 ## Share
 
+## TODO
+
+- [C++ Lambdas aren’t magic, part 1](https://medium.com/@winwardo/c-lambdas-arent-magic-part-1-b56df2d92ad2)
+- [C++ Lambdas aren’t magic, part 2](https://medium.com/@winwardo/c-lambdas-arent-magic-part-2-ce0b48934809)
+- [type_traits, SFINAE, and Concepts](https://kapows.github.io/posts/type_traits-sfinae-concepts/)
+- [std::experimental::is_detected](https://en.cppreference.com/w/cpp/experimental/is_detected)
+- [Inline Namespaces 101](https://foonathan.net/blog/2018/11/22/inline-namespaces.html)
+- [Stop Teaching C++](https://ibob.github.io/blog/2018/11/22/stop-teaching-cpp/)
+- [How I format my C++ papers](https://mpark.github.io/programming/2018/11/16/how-i-format-my-cpp-papers/)
