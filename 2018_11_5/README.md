@@ -1,7 +1,8 @@
 # Weekly ARTS
 
-- 动态规划一题
 - C++17模拟Python中的enumerate
+- C++ & Python - pybind11 入门
+- 人生苦短我还用C++?
 
 ## Algorithm [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -34,7 +35,28 @@ int uniquePaths(int m, int n) {
 
 一篇介绍如何模拟Python中enumerate的文章.
 
-## Technique
+## Technique [C++ & Python - pybind11 入门](pybind11.md)
+
+C++和Python,鱼和熊掌可以兼得.
+
+## Share 人生苦短我还用C++?
+
+最近刚完成了今年的专题,一两百页的PPT《现代C++为开发带来的改变》.从代码书写讲到表达意图,然后是代码的组织结构,设计模式,一直到对思维方式的影响,本以为写完可以放松一下,可实际并非如此.
+
+在最近两三年,我开始深度关注C++语言,每天接受大量的讯息.今年借着公司升级编译器的契机,开始更进一步地思考,能够为现在项目组的软件开发提供什么更好的思路和实践.
+
+在这个过程中我学到非常多的知识,更多的感觉是危机,作为工作近10年的老程序员,越来越意识到一个问题,C++是真的难,这个难不是说C++语言本身,是C++语言所处的环境,导致我们被迫从难到不正常的路径去掌握新的语言特性,实践出更好的应用.
+
+过程中有人问我怎么学C++,思考了一下,我也不知道啊,不知道怎么学会的,也说不清楚是哪本书,哪些教程,哪些文章,抑或项目中的实践促使我掌握了这门编程语言,甚至说我总结不出来一个学习路径来给别人提供建议.
+
+在给PPT列完提纲之后,曾经找专题导师聊过这个,他希望我能够展现出来完全新的一门C++语言,来“改变”现在各个项目组对C++的认知,我觉得这份PPT确实能够做到一点点,但是问题在于,它和现在的以OO为主流的软件设计方式不太一样,利用了语言的特点和特性,来展示不同的设计和实现方法.能有多少人能够吸收,能不能得到实践的机会,都是疑问,我都在怀疑是不是浪费了时间.
+
+人生苦短我还用C++? 或许该换个python/go,抑或提升下思考层次了.
+
+## TODO
+
+状态机这种东西还是得好好琢磨琢磨
+[[Boost].SML: C++14 State Machine Library](https://github.com/boost-experimental/sml)
 
 C++17 fold expression的应用一则,需要学习学习这个特性.
 
@@ -57,15 +79,6 @@ static_assert(get_index_in_pack<char,   char, size_t, int>() == 0);
 static_assert(get_index_in_pack<size_t, char, size_t, int>() == 1);
 static_assert(get_index_in_pack<int,    char, size_t, int>() == 2);
 ```
-
-## Share
-
-pybind11
-
-## TODO
-
-状态机这种东西还是得好好琢磨琢磨
-[[Boost].SML: C++14 State Machine Library](https://github.com/boost-experimental/sml)
 
 - [Copy semantics and resource management in C++](https://www.deleaker.com/blog/2018/11/20/copy-semantics-and-resource-management-in-cpp/)
 - [Tiny cheatsheets for C++11/14/17](https://www.walletfox.com/course/cheatsheets_cpp.php)
