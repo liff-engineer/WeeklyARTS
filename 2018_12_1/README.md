@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 动态规划一题
+- 保证副本消除并不消除副本(Guaranteed Copy Elision Does Not Elide Copies)
 - 如何扩展vcpkg的示例-从svn迁出代码构造包
 - 从最近读到的C++协程系列文章谈起
 
@@ -8,7 +9,9 @@
 
 解决了这个动态规划题目,却不是用的动态规划方法,心中很是沮丧.
 
-## Review
+## Review [保证副本消除并不消除副本](GCE.md)
+
+文章详细讲解了[Guaranteed copy elision through simplified value categories](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0135r0.html).
 
 ## Technique [如何扩展vcpkg的示例-从svn迁出代码构造包](vcpkg_from_git_svn.md)
 
