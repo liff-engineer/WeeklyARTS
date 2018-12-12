@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 动态规划一题
+- 如何扩展vcpkg的示例-从svn迁出代码构造包
 - 从最近读到的C++协程系列文章谈起
 
 ## Algorithm [494. Target Sum](leetcode494.md)
@@ -9,7 +10,7 @@
 
 ## Review
 
-## Technique
+## Technique [如何扩展vcpkg的示例-从svn迁出代码构造包](vcpkg_from_git_svn.md)
 
 ## Share [从最近读到的C++协程系列文章谈起](AboutCppCoro.md)
 
