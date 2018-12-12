@@ -1,12 +1,17 @@
 # Weekly ARTS
 
-## Algorithm
+- 动态规划一题
+- 从最近读到的C++协程系列文章谈起
+
+## Algorithm [494. Target Sum](leetcode494.md)
+
+解决了这个动态规划题目,却不是用的动态规划方法,心中很是沮丧.
 
 ## Review
 
 ## Technique
 
-## Share
+## Share [从最近读到的C++协程系列文章谈起](AboutCppCoro.md)
 
 ## TODO
 
