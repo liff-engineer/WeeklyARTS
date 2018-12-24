@@ -1,4 +1,4 @@
-# 如何打包Python模块
+# [如何打包Python模块](https://packaging.python.org/guides/distributing-packages-using-setuptools/)
 
 ## 典型结构
 

@@ -1,6 +1,7 @@
 # Weekly ARTS
 
-- 如何打包Python模块
+- 如何打包Python模块、
+- 一种命名参数的写法
 
 ## Algorithm
 
@@ -8,7 +9,9 @@
 
 如何将实现的Python模块打包给其他人使用?
 
-## Technique
+## Technique [一种命名参数的写法](NamedParameter.md)
+
+C++中如何模仿Python的命名参数书写方法.
 
 ## Share
 
