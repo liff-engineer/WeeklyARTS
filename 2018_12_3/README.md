@@ -1,8 +1,12 @@
 # Weekly ARTS
 
+- 如何打包Python模块
+
 ## Algorithm
 
-## Review
+## Review [如何打包Python模块](PyPackage.md)
+
+如何将实现的Python模块打包给其他人使用?
 
 ## Technique
 
