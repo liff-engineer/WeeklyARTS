@@ -1,12 +1,12 @@
 # Weekly ARTS
 
-- Flip Model设计模式
+- `Concepts`简介
+- Flip Model 设计模式
 
 ## Algorithm
 
-## Review
+## Review [`Concepts`简介](concepts.md)
 
-## Technique [Flip Model设计模式](https://accu.org/var/uploads/journals/Overload148.pdf#page=6)
+## Technique [Flip Model 设计模式](https://accu.org/var/uploads/journals/Overload148.pdf#page=6)
 
 ## Share
-
