@@ -4,7 +4,72 @@
 - Flip Model 设计模式
 - 关于`Standard Ranges`引发的讨论
 
-## Algorithm
+## Algorithm [309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+
+题目要求,给定一个股票的价格序列,来计算出最大收益,要求同时只能买入或者卖出,当卖出股票时第二天不能再买入.
+
+这个题目是要找出各种状态下的关系,这里分三种:买入,卖出,持有(不能买卖).
+
+- `sell`
+- `buy`
+- `hold`
+
+各种状态下的关系为:
+
+- `sell`卖出
+
+要么不卖-`sell[i]=sell[i-1]`,要么卖出-`sell[i]=buy[i-1]+price`
+
+- `buy`买入
+
+要么不买-`buy[i]=buy[i-1]`,要么买入-`buy[i]=hold[i-1]-price`
+
+- `hold`持有
+
+上次卖出、买入、持有三种情况`hold[i]=max(buy[i-1],sell[i-1],hold[i-1])`
+
+也就是说:
+
+```C++
+sell[i]=std::max(buy[i-1]+prices[i],sell[i-1]);
+buy[i]=std::max(hold[i-1]-prices[i],buy[i-1]);
+hold[i]=std::max(buy[i-1],std::max(sell[i-1],hold[i-1]));
+```
+
+既然要找最大值,`hold[i]`不需要与`buy[i-1]`比较,也就是说`hold[i]=std::max(sell[i-1],hold[i-1])`.而且`hold[i]<=sell[i]`,进一步化简为`hold[i]=sell[i-1]`.
+
+于是变成了:
+
+```C++
+buy[i]=std::max(sell[i-2]-prices[i],buy[i-1]);
+sell[i]=std::max(buy[i-1]+prices[i],sell[i-1]);
+```
+
+每一步运算均和上一步有关系,可以化简为:
+
+```C++
+buy = std::max(last_sell-price,last_buy);
+sell = std::max(last_buy+price,last_sell);
+```
+
+实现如下:
+
+```C++
+int maxProfit(vector<int>& prices) {
+    int buy = std::numeric_limits<int>::min();
+    int sell = 0;
+    int last_buy = buy;
+    int last_sell = 0;
+
+    for (auto price : prices) {
+        last_buy = buy;
+        buy = std::max(last_sell-price,last_buy);
+        last_sell = sell;
+        sell = std::max(last_buy + price, last_sell);
+    }
+    return sell;
+}
+```
 
 ## Review [`Concepts`简介](concepts.md)
 
