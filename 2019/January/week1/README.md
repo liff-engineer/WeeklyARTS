@@ -1,8 +1,12 @@
 # Weekly ARTS
 
+- 现代 CMake 简介
+
 ## Algorithm
 
-## Review
+## Review [现代 CMake 简介](ModernCMakeIntro.md)
+
+针对现代 CMake 的一些文章的理解和简单汇总.
 
 ## Technique
 
