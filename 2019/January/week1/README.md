@@ -17,5 +17,11 @@
 
 ## TODO
 
-- [Case Study: Reusing Double Dispatch for serialization](https://gieseanw.wordpress.com/2018/12/29/reuse-double-dispatch/)
-- [Stop reimplementing the virtual table and start using double dispatch](https://gieseanw.wordpress.com/2018/12/29/stop-reimplementing-the-virtual-table-and-start-using-double-dispatch/)
+- [图说设计模式](https://design-patterns.readthedocs.io/zh_CN/latest/index.html)
+- [Don’t use wrapper](https://schneide.blog/2019/01/03/dont-use-wrapper/)
+
+关于表述,智能指针是`Proxy`模式,`PIMPL`是`Adapter`模式,不应当什么都使用`wrapper`.还有一些修饰器什么的,多使用通用语言.
+
+- [Installing and Using Packages Example: SQLite](https://github.com/Microsoft/vcpkg/blob/master/docs/examples/installing-and-using-packages.md)
+
+现代 CMake 实践.
