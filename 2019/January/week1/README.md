@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 现代 CMake 简介
+- C++中的 Visitor 模式的实现方式
 
 ## Algorithm
 
@@ -8,7 +9,9 @@
 
 针对现代 CMake 的一些文章的理解和简单汇总.
 
-## Technique
+## Technique [C++中的 Visitor 模式的实现方式](CxxVisitor.md)
+
+如何使用 C++实现`Visitor`模式.
 
 ## Share
 
