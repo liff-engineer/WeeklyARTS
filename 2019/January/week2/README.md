@@ -1,14 +1,16 @@
 # Weekly ARTS
 
+- C++中派生类如何使用基类的构造函数
 - 基于 Visual Studio 开发 Node.js C++ Addons 简介
+- 选择合适的工具
 
 ## Algorithm
 
-## Review
+## Review [使用基类的构造函数](using_base_constructor.md)
 
 ## Technique [基于 Visual Studio 开发 Node.js C++ Addons 简介](VSNodeAddonDevIntro.md)
 
-## Share
+## Share 选择合适的工具
 
 ## TODO
 
