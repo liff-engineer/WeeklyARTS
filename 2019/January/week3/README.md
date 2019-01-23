@@ -4,7 +4,37 @@
 - Boost.MultiIndex 部分特性的 C++17 实现
 - 语言对软件设计的影响
 
-## Algorithm
+## Algorithm [120. Triangle](https://leetcode.com/problems/triangle/)
+
+题目要求给定一个三角形,找出从顶到底和最小的路径,每次只能移动到下一行的相邻数字.
+
+这里可以采用从底到顶的方法,计算出每一层到目标位置的最小路径和.其中的子问题关系如下:
+
+```C++
+dp[i][j]=triangle[i][j]+std::min(dp[i+1][j],dp[i+1][j+1])
+```
+
+直接将`dp`合并到`triangle`上,子问题结果为:
+
+```C++
+triangle[i][j]+=std::min(triangle[i+1][j],triangle[i+1][j+1])
+```
+
+实现如下:
+
+```C++
+int minimumTotal(vector<vector<int>>& triangle) {
+    auto n = triangle.size();
+    for (int i = n - 1; i > 0; i--)
+    {
+        for (auto j = 0; j < triangle[i].size() - 1; j++)
+        {
+            triangle[i - 1][j] += std::min(triangle[i][j], triangle[i][j + 1]);
+        }
+    }
+    return triangle[0][0];
+}
+```
 
 ## Review [使用`auto`声明免类型模板参数](P0127R2.md)
 
