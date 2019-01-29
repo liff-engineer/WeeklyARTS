@@ -1,6 +1,8 @@
 # Weekly ARTS
 
+- 针对 The Clean Architecture 的理解
 - C++中观察者模式的一种实现
+- 什么是好的软件设计/架构
 
 ## Algorithm [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
 
@@ -72,7 +74,27 @@ ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
 
 在自行实现空间复杂度为`O(1)`的过程中出现了各种边界错误等等,这才能体会到 STL 算法库的精妙.
 
-## Review
+## Review [针对 The Clean Architecture 的理解](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+`The Clean Architecture`将软件架构分为 4 个环.
+
+![The Clean Architecture](http://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+
+分别是:
+
+1. Enterprise Business Rules
+2. Application Business Rules
+3. Interface Adapters
+4. Frameworks & Drivers
+
+假设有一个银行账号系统的设计,那么该如何使用`Clean Architecture`指导我们的设计?
+
+- 银行账号这个首先是作为`Entity`来看待,银行账号应该有什么样的特性,可以用来做什么,这个属于`Enterprise Business Rules`,银行账号是业务模型,应该放在最内环.
+- 然后针对银行账号会有各种各样的操作,譬如增删改查等等等等,这些属于`Application Business Rules`,或者说用例
+- 针对银行账号的操作可能有多个入口,譬如 ATM 机、柜台系统、手机 App 等等,每个都需要单独设计,要求也不一样,这些终端及其 UI 等等属于`Frameworks & Drivers`
+- 终端与用例之间的粘合层属于`Interface Adapters`,通过它使得用户可以通过具体的设备或者 UI 使用相同的操作流程, 来操作同一个业务模型.
+
+`Clean Architecture`相对来讲比较易懂,也能够用来指导具体实现,可以按照这个套路尝试下.
 
 ## Technique [C++中观察者模式的一种实现](Observer.md)
 
