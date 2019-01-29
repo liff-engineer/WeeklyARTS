@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- C++中观察者模式的一种实现
+
 ## Algorithm [189. Rotate Array](https://leetcode.com/problems/rotate-array/)
 
 题目要求给定数组,实现类似位操作的右移效果.
@@ -72,8 +74,10 @@ ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
 
 ## Review
 
-## Technique
-
-C++中"ORM"的简易实现.
+## Technique [C++中观察者模式的一种实现](Observer.md)
 
 ## Share
+
+## TODO
+
+C++中"ORM"的简易实现.
