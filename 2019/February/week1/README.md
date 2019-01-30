@@ -1,12 +1,13 @@
 # Weekly ARTS
 
 - 在 MSVC 中如何分析构建效率
+- CMake 快捷使用 vcpkg 库管理器
 
 ## Algorithm
 
 ## Review [在 MSVC 中如何分析构建效率](WhySoSlow.md)
 
-## Technique
+## Technique [CMake 快捷使用 vcpkg 库管理器](vcpkgTargets.md)
 
 ## Share
 
