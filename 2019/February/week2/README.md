@@ -76,7 +76,7 @@ bool equationsPossible(vector<string>& equations) {
 }
 ```
 
-## Review
+## Review [使用 constexpr 进行编译期编程](constexpr.md)
 
 ## Technique
 
