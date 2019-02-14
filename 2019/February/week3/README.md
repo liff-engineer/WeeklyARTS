@@ -1,10 +1,12 @@
 # Weekly ARTS
 
+- Qt 与 CMake
+
 ## Algorithm
 
 ## Review
 
-## Technique
+## Technique [Qt 与 CMake](QtVsCMake.md)
 
 ## Share
 
