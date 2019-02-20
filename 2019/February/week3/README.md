@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 在 C/C++项目中应用 DevOps 所面临的挑战
 - Qt 与 CMake
 - C++已经保证向后兼容了,你们却还过得如此艰难
 
@@ -77,7 +78,7 @@ vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
 
 跑出来的结果处于百分之九十多的层次.这就能理解了为什么建议如果不在乎顺序,在`map`,`set`,`unordered_map`,`unordered_set`这些容器中优选选择`unordered_xx`等使用哈希实现的容器了.
 
-## Review
+## Review [在 C/C++项目中应用 DevOps 所面临的挑战](DevOpsAndCpp.md)
 
 ## Technique [Qt 与 CMake](QtVsCMake.md)
 
