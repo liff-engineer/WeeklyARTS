@@ -1,0 +1,155 @@
+##用来为已构建二进制库提供CMake的支持,使得使用者可以以如下方式使用
+##find_package(package_name COMPONENTS library_name)
+
+##检查CMake版本
+if(CMAKE_VERSION VERSION_LESS 3.12)
+    message(FATAL_ERROR "@PACKAGE_NAME@ requries at least CMake version 3.12")
+endif()
+
+##一般结构为
+##root
+##  - include
+##  - bin
+##  - lib
+##    - cmake
+##      - library_name
+##        - library_name-config.cmake #本文件
+##也就是说库安装位置要向上走三级
+##但是如果是编译好的二进制,则不一定,需要指定 
+#message(STATUS "相对路径为:@LIBRARY_RELATIVE_PATH@")
+
+get_filename_component(_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix "${CMAKE_CURRENT_LIST_DIR}/../@LIBRARY_RELATIVE_PATH@" ABSOLUTE)
+
+if(NOT TARGET @PACKAGE_NAME@::@LIBRARY_NAME@)
+    ##传递find_package选项
+    set(_@PACKAGE_NAME@@LIBRARY_NAME@_FIND_DEPENDENCIES_REQUIRED)
+    if (@PACKAGE_NAME@@LIBRARY_NAME@_FIND_REQUIRED)
+        set(_@PACKAGE_NAME@@LIBRARY_NAME@_FIND_DEPENDENCIES_REQUIRED REQUIRED)
+    endif()
+    set(_@PACKAGE_NAME@@LIBRARY_NAME@_FIND_DEPENDENCIES_QUIET)
+    if (@PACKAGE_NAME@@LIBRARY_NAME@_FIND_QUIETLY)
+        set(_@PACKAGE_NAME@@LIBRARY_NAME@_DEPENDENCIES_FIND_QUIET QUIET)
+    endif()
+    set(_@PACKAGE_NAME@@LIBRARY_NAME@_FIND_VERSION_EXACT)
+    if (@PACKAGE_NAME@@LIBRARY_NAME@_FIND_VERSION_EXACT)
+        set(_@PACKAGE_NAME@@LIBRARY_NAME@_FIND_VERSION_EXACT EXACT)
+    endif()
+
+    ##确保library同package内部依赖存在
+    if(NOT "@LIBRARY_DEPENDENCIES@" STREQUAL "")
+        set(__LIST "@LIBRARY_DEPENDENCIES@")
+        foreach(_module_dep ${__LIST})
+            if(NOT ${_module_dep}_FOUND)
+                find_package(${_module_dep}
+                    ${_@PACKAGE_NAME@@LIBRARY_NAME@_DEPENDENCIES_FIND_QUIET}
+                    ${_@PACKAGE_NAME@@LIBRARY_NAME@_DEPENDENCIES_FIND_QUIET}
+                    PATHS "${_@PACKAGE_NAME@_install_prefix}"
+                )
+            endif()
+
+            if(NOT ${_module_dep}_FOUND)
+                message(STATUS "无法使用 @LIBRARY_NAME@ 因为依赖的模块 ${_module_dep} 无法找到")
+                set(@LIBRARY_NAME@_FOUND False)
+                return()
+            endif()
+        endforeach()
+    endif()
+
+    ##生成library导入target
+    add_library(@LIBRARY_NAME@ SHARED IMPORTED GLOBAL)
+    add_library(@PACKAGE_NAME@::@LIBRARY_NAME@ ALIAS @LIBRARY_NAME@)
+    ##配置预处理器定义
+    if(NOT "@LIBRARY_COMPILE_DEFINITIONS@" STREQUAL "")
+        set_target_properties(@PACKAGE_NAME@::@LIBRARY_NAME@ PROPERTIES
+            INTERFACE_COMPILE_DEFINITIONS "@LIBRARY_COMPILE_DEFINITIONS@"
+        )
+    endif()
+
+    ##配置头文件路径
+    if(NOT "@LIBRARY_INCLUDE_DIRS@"  STREQUAL "")
+        set(_@PACKAGE_NAME@@LIBRARY_NAME@_INCLUDE_DIRS)
+        set(__LIST "@LIBRARY_INCLUDE_DIRS@")
+        foreach(_rpath  ${__LIST})
+            if(EXISTS "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/${_rpath}" )
+                list(APPEND 
+                    _@PACKAGE_NAME@@LIBRARY_NAME@_INCLUDE_DIRS 
+                    "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/${_rpath}"
+                )
+            endif()
+        endforeach()     
+
+        if(_@PACKAGE_NAME@@LIBRARY_NAME@_INCLUDE_DIRS)
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                INTERFACE_INCLUDE_DIRECTORIES "${_@PACKAGE_NAME@@LIBRARY_NAME@_INCLUDE_DIRS}"
+            )
+        endif()
+    endif()
+    
+    ##配置同package模块依赖
+    if(NOT "@LIBRARY_DEPENDENCIES@" STREQUAL "")
+        set(_@PACKAGE_NAME@@LIBRARY_NAME@_LINK_LIBRARIES)
+        set(__LIST "@LIBRARY_DEPENDENCIES@")
+        foreach(_module_dep ${__LIST})
+            list(APPEND _@PACKAGE_NAME@@LIBRARY_NAME@_LINK_LIBRARIES "${_module_dep}")
+            #target_link_libraries(@LIBRARY_NAME@ INTERFACE "${_module_dep}")
+        endforeach()
+
+        if(_@PACKAGE_NAME@@LIBRARY_NAME@_LINK_LIBRARIES)
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                "INTERFACE_LINK_LIBRARIES" "${_@PACKAGE_NAME@@LIBRARY_NAME@_LINK_LIBRARIES}"
+            )
+        endif()
+    endif()
+
+    ##根据win32/x64配置库依赖
+    if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+        ##动态库路径配置
+        if(NOT "@IMPORTED_LOCATION_X86_DEBUG_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_LOCATION_DEBUG "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_LOCATION_X86_DEBUG_RPATH@"
+            ) 
+        endif()
+        if(NOT "@IMPORTED_LOCATION_X86_RELEASE_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_LOCATION "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_LOCATION_X86_RELEASE_RPATH@"
+            ) 
+        endif() 
+
+        ##导入库路径配置
+        if(NOT "@IMPORTED_IMPLIB_X86_DEBUG_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_IMPLIB_DEBUG "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_IMPLIB_X86_DEBUG_RPATH@"
+            ) 
+        endif()
+        if(NOT "@IMPORTED_IMPLIB_X86_RELEASE_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_IMPLIB "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_IMPLIB_X86_RELEASE_RPATH@"
+            ) 
+        endif()                 
+    elseif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+        ##动态库路径配置
+        if(NOT "@IMPORTED_LOCATION_X64_RELEASE_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_LOCATION_DEBUG "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_LOCATION_X64_RELEASE_RPATH@"
+            ) 
+        endif()
+        if(NOT "@IMPORTED_LOCATION_X64_RELEASE_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_LOCATION "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_LOCATION_X64_RELEASE_RPATH@"
+            ) 
+        endif() 
+
+        ##导入库路径配置
+        if(NOT "@IMPORTED_IMPLIB_X64_DEBUG_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_IMPLIB_DEBUG "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_IMPLIB_X64_DEBUG_RPATH@"
+            ) 
+        endif()
+        if(NOT "@IMPORTED_IMPLIB_X64_RELEASE_RPATH@" STREQUAL "")
+            set_target_properties(@LIBRARY_NAME@ PROPERTIES
+                IMPORTED_IMPLIB "${_@PACKAGE_NAME@@LIBRARY_NAME@_install_prefix}/@IMPORTED_IMPLIB_X64_RELEASE_RPATH@"
+            ) 
+        endif() 
+    endif()
+
+endif()
