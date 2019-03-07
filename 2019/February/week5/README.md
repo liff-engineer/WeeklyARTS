@@ -4,7 +4,57 @@
 - 为现有二进制库提供 `Modern CMake` 适配
 - 沟通的基础
 
-## Algorithm
+## Algorithm [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
+
+上周做了一个表达式计算器的题目,最终虽然 accept 了,但是效率和内存占用都比较高,然后想着这周看一看怎么提高效率.看了下 discuss,发现都是"手写"的代码,根据题目要求来做.之前做含变量表达式计算器,就知道这种东西应用时是分几步的,首先是 token,然后使用调度场算法转换为逆波兰表达式,逆波兰表达式已经移除掉了`(`、`)`等.并且根据表达式优先级调整好了顺序.只需要执行逆波兰表达式运算即可.
+
+这次的题目就是运算逆波兰表达式.运算逆波兰表达式,需要使用栈,运算方式如下:
+
+- 判断是否是运算符,如果是则从结果栈中取参数运算,然后压栈
+- 如果不是运算符,则将其转换成整数压栈
+- 运算符需要左右两个操作数时,右侧操作符在栈顶,左侧操作符在其下面
+
+搞清楚这个规则之后,运算就非常简单了:
+
+```C++
+int evalRPN(vector<string>& tokens) {
+    std::stack<int> evals;
+    for(auto&& token:tokens)
+    {
+        if(token == "+" || token =="-" || token =="*" || token =="/")
+        {
+            auto rhs = evals.top();
+            evals.pop();
+            auto lhs = evals.top();
+            evals.pop();
+
+            if(token =="+")
+            {
+                evals.push(lhs+rhs);
+            }
+            else if(token =="-")
+            {
+                evals.push(lhs-rhs);
+            }
+            else if(token =="*")
+            {
+                evals.push(lhs*rhs);
+            }
+            else if(token =="/")
+            {
+                evals.push(lhs/rhs);
+            }
+        }
+        else
+        {
+                evals.push(std::stoi(token));
+        }
+    }
+    return evals.top();
+}
+```
+
+为什么我没有分析我之前实现的效率问题? 因为既然是算法练习,学的就是算法,为了追求效率根据题目的假设,硬写分析,可能偏离了原先的初衷.
 
 ## Review [KEYNOTE: Oh The Humanity! - Kate Gregory [C++ on Sea 2019]](https://www.youtube.com/watch?v=SzoquBerhUc)
 
