@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 不要使用`using namespace std`
 - 使用 Modern CMake 构建 SDK
 - "编程"不应该这么难
 
@@ -91,7 +92,45 @@ int maxWidthRamp(vector<int>& A) {
 
 看来我这不仅算法欠缺,数据结构的基础也是非常差,路漫漫其修远兮......
 
-## Review
+## Review [不要使用`using namespace std`](https://akrzemi1.wordpress.com/2019/03/14/not-using-namespace-std/)
+
+```C++
+using namespace std;
+```
+这个被称为`using directive`.在需要工作多年的代码中使用它并不是一个好的实践.
+
+有时别人会建议你直接使用`using namespace std`,这样标准库里的所有东西都可以很简单地使用,不需要再添加`std::`前缀了.当你刚开始学习`C++`,或者要写一些示例,或者写小型的私人项目,可以采用这种方式.因为对于这些程序,如果你更换了编译器或者语言版本之后编译不过并不是大问题.
+
+`using namespace std;`使得所有定义在`std`命名空间的所有符号在全局命名空间可用,不需要`std::`.你不需要知道`std`命名空间有多少`名称`,以及其含义.如果你升级到新的`C++`版本,有更大的标准库,将会有更多的`名称`注册到全局命名空间:或许有一些`名称`你已经在你自己的程序中声明过了.
+
+
+假设你用C++14编写的程序,你在程序中使用了`using namespace std;`,而你又在全局命名空间中定义了自己的类型,`byte`.也可能你定义了这样的函数.当然,你可能不会将它声明到全局命名空间,你将其声明到`my_namespace`,然后使用了`using namespace my_namespace;`.这时可以在程序中以很简洁的方式使用:
+
+```C++
+#include <string>
+using namespace std;
+ 
+class byte {};
+ 
+int main()
+{
+  byte b;
+  // ...
+}
+```
+
+然后,过了一段时间,你将程序所用的C++版本升级到了C++17.你可能不知道在C++17在`std`命名空间定义了枚举类型`byte`,或许你没想到它在`<string>`中.但是突然之间,名称`byte`变得含混不清,你有两种`byte`能够在全局命名空间找到.如果这种情况出现在大型项目的很多文件中,修复这个问题就会变得复杂.
+
+这是因为`using namespace std;`不仅仅意味着"注入所有定义在`std`中的名称,即使是我不知道的",同时也意味着,"无论未来有什么名称添加到`std`,即使它们与我的定义冲突,也要注入到全局命名空间".
+
+作为`using namespace std;`的替代品,这里建议要么将所有的标准库组件使用都添加上`std::`,或者针对你要使用的标准库组件用`using declaration`注入:
+
+```C++
+#include <string>
+using std::string;
+```
+
+事实上,这个建议适用于任何你无法控制的命名空间,不仅仅是`std`.
 
 ## Technique [使用 Modern CMake 构建 SDK](ModernCMakeforSDK.md)
 
