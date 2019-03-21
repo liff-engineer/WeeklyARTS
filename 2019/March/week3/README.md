@@ -1,9 +1,12 @@
 # Weekly ARTS
 
+- Thanks for the memory (allocator)
+- Python"原生"包构建实现解析
+
 ## Algorithm
 
-## Review [Thanks for the memory (allocator)](https://blog.feabhas.com/2019/03/thanks-for-the-memory-allocator/)
+## Review [Thanks for the memory (allocator)](allocator.md)
 
-## Technique
+## Technique [Python"原生"包构建实现解析](python_native_pacakge_impl.md)
 
 ## Share
