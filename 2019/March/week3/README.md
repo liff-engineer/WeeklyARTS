@@ -4,7 +4,46 @@
 - Python"原生"包构建实现解析
 - 工欲善其事必先利其器
 
-## Algorithm
+## Algorithm [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
+
+题目要求,给定正整数数组`nums`,以及正整数`s`,找出最短的连续子数组,使得子数组之和大于等于`s`.如果不存在的范围`0`.
+
+因为要查找子数组,那么只需要记住子数组的开头即可,在查找过程中一直计算之前的子数组之和,如果和超过`s`,则记录下当前子数组,然后把子数组的开头向后推,从而创建新的子数组.
+
+解决思路如下：
+
+1. 建立子数组
+2. 求和直到满足条件
+
+基本上就是步骤`1`和`2`循环操作.
+
+```C++
+int minSubArrayLen(int s, vector<int>& nums) {
+    if (nums.size() < 1)
+        return 0;
+    std::size_t last_idx = 0;
+    int last = 0;
+    int result = nums.size() + 1; //初始化为个数+1
+    for (auto i = 0ul; i < nums.size(); i++)
+    {
+        last += nums.at(i);
+        if (last < s)
+            continue;
+        result = std::min(result, static_cast<int>(i - last_idx));
+        while (last >= s) //移动last_idx保证last >= s
+        {
+            last -= nums.at(last_idx++);
+        }
+        result = std::min(result, static_cast<int>(i - last_idx + 1));
+    }
+    return (result == nums.size() + 1) ? 0 : (result + 1);
+}
+```
+
+这个题目需要注意几个点:
+
+1. 单个数值就满足条件的场景处理
+2. 连续时返回的个数是索引之差加`1`
 
 ## Review [Thanks for the memory (allocator)](allocator.md)
 
