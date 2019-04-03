@@ -1,12 +1,13 @@
 # Weekly ARTS
 
 - 计算素数个数
+- 使用 Jenkins 及 CMake 进行 C++自动化构建简介
 - 代理与修饰模式的一种混合应用
 - 你认为自己有什么个人优势
 
 ## Algorithm [204. Count Primes 计算素数个数](PrimeCount.md)
 
-## Review [Introduction into an Automated C++ Build Setup with Jenkins and CMake](https://thoughts-on-cpp.com/2019/03/27/introduction-into-build-automation-setup-with-jenkins-and-cmake/)
+## Review [使用 Jenkins 及 CMake 进行 C++自动化构建简介](CppAutomatedBuildSetup.md)
 
 ## Technique [代理与修饰模式的一种混合应用](ProxyDecorator.md)
 
