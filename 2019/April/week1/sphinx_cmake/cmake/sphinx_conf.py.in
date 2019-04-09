@@ -1,0 +1,18 @@
+
+# 工程信息
+project = 'Sphinx与CMake应用示例'
+copyright = '2019,liff.engineer@gmail.com'
+author = 'liff.engineer@gmail.com'
+
+# 版本号
+release = '0.0.1'
+
+# 通用配置
+
+extensions = []
+templates_path = []
+exclude_patterns = []
+
+# HTML输出选项
+html_theme = 'alabaster'
+html_static_path = []

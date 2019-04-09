@@ -2,7 +2,7 @@
 
 - 使用滑动窗口计算中位数序列
 - 让你的 README 和项目写得一样好
-- Sphinx 与 CMake
+- Sphinx 与 CMake 应用示例
 - 项目文档应该写什么
 
 ## Algorithm [480. Sliding Window Median](slidingwindow.md)
@@ -11,7 +11,7 @@
 
 ## Review [让你的 README 和项目写得一样好](readme_howto.md)
 
-## Technique Sphinx 与 CMake
+## Technique [Sphinx 与 CMake 应用示例](sphinx_cmake.md)
 
 ## Share 项目文档应该写什么
 
