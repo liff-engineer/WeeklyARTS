@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 使用滑动窗口计算中位数序列
+- 让你的 README 和项目写得一样好
 - Sphinx 与 CMake
 - 项目文档应该写什么
 
@@ -8,7 +9,7 @@
 
 使用滑动窗口计算中位数序列.
 
-## Review [How to generate beautiful technical documentation](https://www.tjelvarolsson.com/blog/how-to-generate-beautiful-technical-documentation/)
+## Review [让你的 README 和项目写得一样好](readme_howto.md)
 
 ## Technique Sphinx 与 CMake
 
