@@ -74,9 +74,11 @@ vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
 
 [How I discovered the C++ algorithm library and learned not to reinvent the wheel](https://medium.freecodecamp.org/how-i-discovered-the-c-algorithm-library-and-learned-not-to-reinvent-the-wheel-2398a34e23e3)
 
-## Share
+## Share Work Hard 还是 Work Smart
 
 ## TODO
 
 - [The space of design choices for std::function](https://quuxplusone.github.io/blog/2019/03/27/design-space-for-std-function/)
 - [10 Code Smells a Static Analyser Can Locate in a Codebase](https://www.fluentcpp.com/2019/03/26/10-code-smells-a-static-analyser-can-locate-in-a-codebase/)
+
+- [Alexander A. Stepanov](http://stepanovpapers.com)
