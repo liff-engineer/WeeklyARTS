@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- C++排序算法
 - Work Hard 还是 Work Smart
 
 ## Algorithm [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
@@ -70,7 +71,7 @@ vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
 
 [TRANSLATOR PATTERN](http://www.iro.umontreal.ca/~keller/Layla/translator.pdf)
 
-## Technique
+## Technique [C++排序算法](cpp_sort.md)
 
 [What's the practical difference between std::nth_element and std::sort?](https://stackoverflow.com/questions/10352442/whats-the-practical-difference-between-stdnth-element-and-stdsort)
 
