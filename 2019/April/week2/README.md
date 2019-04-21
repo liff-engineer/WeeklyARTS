@@ -67,7 +67,7 @@ vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
 
 [Recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser)
 
-## Review
+## Review [10 种静态分析可以识别的代码味道](code_smells.md)
 
 [TRANSLATOR PATTERN](http://www.iro.umontreal.ca/~keller/Layla/translator.pdf)
 
