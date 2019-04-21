@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - C++排序算法
+- 10 种静态分析可以识别的代码味道
 - Work Hard 还是 Work Smart
 
 ## Algorithm [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
