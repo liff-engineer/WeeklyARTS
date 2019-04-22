@@ -2,7 +2,80 @@
 
 - 坚持何其难
 
-## Algorithm
+## Algorithm [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
+
+如果一组数据相邻数之差正负交替,则被称为摆动序列.第一个相邻数之差可能为正数或者负数.小于两个数的序列也被认为是摆动序列.
+
+给定整数序列,返回是摆动序列的最长子序列长度.可以移除序列中的一些数来构成子序列,单相对顺序要保持一致.
+
+这是一个动态规划问题,针对每个相邻位置,有以下三种情况:
+
+- 增大
+- 减小
+- 持平
+
+这里我们定义两个数组`up`和`down`,来记录每次增大/缩小时的子序列长度,这样针对这三种情况,变化如下:
+
+- 增大: `up[i]=down[i-1]+1;down[i]=down[i-1]`
+- 减小: `down[i]=up[i-1]+1;up[i]=up[i-1]`
+- 持平: `down[i]=down[i-1];up[i]=up[i-1]`
+
+最终解决方案如下:
+
+```cpp
+int wiggleMaxLength(vector<int>& nums) {
+    if(nums.size()<=1) return nums.size();
+
+    std::vector<int> up(nums.size(), 0);
+    std::vector<int> down(nums.size(), 0);
+    up[0] = 1;
+    down[0] = 1;
+    for (auto i = 1; i < nums.size(); i++)
+    {
+        auto diff = nums[i] - nums[i - 1];
+        if (diff > 0)
+        {
+            up[i] = down[i - 1] + 1;
+            down[i] = down[i - 1];
+        }
+        else if (diff < 0)
+        {
+            down[i] = up[i - 1] + 1;
+            up[i] = up[i - 1];
+        }
+        else
+        {
+            down[i] = down[i - 1];
+            up[i] = up[i - 1];
+        }
+    }
+    return std::max(up.back(), down.back());
+}
+```
+
+而考虑到每次都是使用的上一次数据,实际上不需要将`up`和`down`以数组形式保存,更节省空间的实现如下:
+
+```c++
+int wiggleMaxLength(vector<int>& nums) {
+    if(nums.size()<=1) return nums.size();
+
+    auto last_up = 1;
+    auto last_down = 1;
+    for (auto i = 1; i < nums.size(); i++)
+    {
+        auto diff = nums[i] - nums[i - 1];
+        if (diff > 0)
+        {
+            last_up = last_down + 1;
+        }
+        else if (diff < 0)
+        {
+            last_down = last_up + 1;
+        }
+    }
+    return std::max(last_up, last_down);
+}
+```
 
 ## Review
 
