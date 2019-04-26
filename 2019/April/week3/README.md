@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 尝试向面向对象死忠解释 ECS
+- Windows 上 利用 CMake 实现部署
 - 坚持何其难
 
 ## Algorithm [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
@@ -80,7 +81,7 @@ int wiggleMaxLength(vector<int>& nums) {
 
 ## Review [尝试向面向对象死忠解释 ECS](ECS_for_OO_developers.md)
 
-## Technique
+## Technique [Windows 上 利用 CMake 实现部署](windows_cmake_deploy.md)
 
 ## Share 坚持何其难
 
