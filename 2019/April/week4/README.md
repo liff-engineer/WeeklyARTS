@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- 你是否被 OO 蒙蔽了双眼
+
 ## Algorithm [561. Array Partition I](https://leetcode.com/problems/array-partition-i/)
 
 随机轻松一下,题目给定了`2n`个整数,要求将这些整数分成两个一组,取其中最小值然后求和,求最大和大小为多少.
@@ -63,7 +65,15 @@ int arrayPairSum(vector<int>& nums) {
 - [The SoA Vector – Part 1: Optimizing the Traversal of a Collection](https://www.fluentcpp.com/2018/12/18/the-soa-vector-part-1-optimizing-the-traversal-of-a-collection/)
 - [The SoA Vector – Part 2: Implementation in C++](https://www.fluentcpp.com/2018/12/21/an-soa-vector-with-an-stl-container-interface-in-cpp/)
 
-## Share
+## Share 你是否被 OO 蒙蔽了双眼
+
+最近了解到`Data Oriented Design`以及`Entity Component System`架构,感觉一部分认知被打开了.`Data Oriented Design`经常与`Object Oriented Design`进行对比,据我所了解,这种方法在游戏业界应用比较广泛.
+
+每种设计都有其应用场景,这我知道,不过这是我分析完现在产品的业务场景,结合历史经验得到的结论.目前的产品形态更适合从`DOD`及`ECS`中获取灵感,而不是沉迷于 OO,研究各种`Clean Architecture`,领域驱动设计等等. 我们的双眼被自己的经验,周围环境所蒙蔽.却迟迟没有跳出这个环境.即使是我们很努力很用心地分析业务,所作的也只是在现有基础上进行改进,而不是改变.
+
+目前我只是初步了解了`ECS`,已经能够在产品中找到大量应用场景,以前很多很痛苦的实现,一些无法做到的事情用这种思路变得简单直接了.想到之前在泥潭中挣扎,真是有点悔不当初的感觉.
+
+编程范式要好好学习,也要多了解外部世界,各种各样的思路和想法,这样才不至于被 OO 这种最常用的技术蒙蔽了双眼,无法看到更好的实践.
 
 ## TODO
 
