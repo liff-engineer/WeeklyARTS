@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 尝试向面向对象死忠解释 ECS
 - 坚持何其难
 
 ## Algorithm [376. Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
@@ -77,7 +78,7 @@ int wiggleMaxLength(vector<int>& nums) {
 }
 ```
 
-## Review
+## Review [尝试向面向对象死忠解释 ECS](ECS_for_OO_developers.md)
 
 ## Technique
 
