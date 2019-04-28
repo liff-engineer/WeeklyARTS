@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- C++中数据按类型访问接口的一种实现
 - 你是否被 OO 蒙蔽了双眼
 
 ## Algorithm [561. Array Partition I](https://leetcode.com/problems/array-partition-i/)
@@ -60,7 +61,7 @@ int arrayPairSum(vector<int>& nums) {
 
 ## Review [Top 25 C++ API design mistakes and how to avoid them](https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/)
 
-## Technique
+## Technique [C++中数据按类型访问接口的一种实现](db_like_api.md)
 
 - [The SoA Vector – Part 1: Optimizing the Traversal of a Collection](https://www.fluentcpp.com/2018/12/18/the-soa-vector-part-1-optimizing-the-traversal-of-a-collection/)
 - [The SoA Vector – Part 2: Implementation in C++](https://www.fluentcpp.com/2018/12/21/an-soa-vector-with-an-stl-container-interface-in-cpp/)
