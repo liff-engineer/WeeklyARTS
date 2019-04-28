@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 理解 GitHub 工作流
 - C++中数据按类型访问接口的一种实现
 - 你是否被 OO 蒙蔽了双眼
 
@@ -59,7 +60,9 @@ int arrayPairSum(vector<int>& nums) {
 
 学艺不精.果然`vector`是追求性能的首选.
 
-## Review [Top 25 C++ API design mistakes and how to avoid them](https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/)
+## Review [理解 GitHub 工作流](github_workflow.md)
+
+- [Top 25 C++ API design mistakes and how to avoid them](https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/)
 
 ## Technique [C++中数据按类型访问接口的一种实现](db_like_api.md)
 
