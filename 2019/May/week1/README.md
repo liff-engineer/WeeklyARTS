@@ -36,7 +36,7 @@ bool isSymmetric(TreeNode* root) {
 }
 ```
 
-## Review
+## Review [什么时候不使用 ECS?](when_not_ecs.md)
 
 ## Technique
 
