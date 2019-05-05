@@ -1,7 +1,7 @@
 # Weekly ARTS
 
-面向数据设计以及 ECS 主题
-
+- 什么时候不使用 ECS?
+- C++中的修饰器模式
 - "算法=逻辑+控制"
 
 ## Algorithm [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
@@ -38,7 +38,7 @@ bool isSymmetric(TreeNode* root) {
 
 ## Review [什么时候不使用 ECS?](when_not_ecs.md)
 
-## Technique
+## Technique [C++中的修饰器模式](decorator.md)
 
 ## Share "算法=逻辑+控制"
 
@@ -65,3 +65,7 @@ y=f(x)
 其中`x`和`y`是数据,而`f`即逻辑.可以这么理解,无法在该公式里表达的内容就是`Control`.
 
 ## TODO
+
+- [Isn't an Entity-Component System terrible for decoupling/information hiding?](https://softwareengineering.stackexchange.com/questions/372527/isnt-an-entity-component-system-terrible-for-decoupling-information-hiding)
+
+- [Entities, components and systems](https://medium.com/ingeniouslysimple/entities-components-and-systems-89c31464240d)
