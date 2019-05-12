@@ -84,7 +84,7 @@ ListNode* reverseBetween(ListNode* head, int m, int n) {
 
 ## Review [C++中如何模拟实现多态](polymorphic_ducks.md)
 
-## Technique
+## Technique [C++实现稀疏集合](sparse_sets.md)
 
 C++实现的 ECS 框架如何使用.
 
@@ -109,3 +109,7 @@ C++实现的 ECS 框架如何使用.
 - [The repeated deaths of OOP](http://loup-vaillant.fr/articles/deaths-of-oop)
 - [Why OO Sucks](http://www.cs.otago.ac.nz/staffpriv/ok/Joe-Hates-OO.htm)
 - [OOP is the Root of All Evil](https://www.youtube.com/watch?v=748TEIIlg14)
+
+- [Sparse Sets, an extremely efficient way to store unsigned integers, in C++](https://www.computist.xyz/2018/06/sparse-sets.html)
+- [Using Uninitialized Memory for Fun and Profit](https://research.swtch.com/sparse)
+- [Sparse Set](https://www.geeksforgeeks.org/sparse-set/)
