@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- C++中如何模拟实现多态
 - 没有了 OOP,你是否还能写得出代码?
 
 ## Algorithm [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
@@ -81,7 +82,7 @@ ListNode* reverseBetween(ListNode* head, int m, int n) {
 }
 ```
 
-## Review
+## Review [C++中如何模拟实现多态](polymorphic_ducks.md)
 
 ## Technique
 
