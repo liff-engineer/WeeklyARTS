@@ -1,12 +1,12 @@
 # Weekly ARTS
 
-- C++??????????
+- C++编译期字符串常量哈希
 
-## Algorithm
+## Algorithm [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/description/)
 
 ## Review
 
-## Technique [C++??????????](compile_string_hash.md)
+## Technique [C++编译期字符串常量哈希](compile_string_hash.md)
 
 ## Share
 
