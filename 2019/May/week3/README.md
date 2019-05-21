@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 什么是 Mixin
 - C++编译期字符串常量哈希
 
 ## Algorithm [771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/description/)
@@ -29,7 +30,7 @@ int numJewelsInStones(string J, string S) {
 
 最终运行结果比双层循环的方案要差,不明白为什么.
 
-## Review
+## Review [什么是 Mixin](mixins.md)
 
 ## Technique [C++编译期字符串常量哈希](compile_string_hash.md)
 
