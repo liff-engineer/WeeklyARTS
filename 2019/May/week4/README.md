@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- entt 中 Component 的存储实现
+
 ## Algorithm [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 
 题目要求给定未排序的整数数组,求出最长连续整数序列的长度.并且算法复杂度在`O(n)`.例如`nums={100,4,200,1,3,2}`,其中最长连续整数序列为`1,2,3,4`,即结果为`4`.
@@ -71,6 +73,6 @@ int longestConsecutive(vector<int>& nums) {
 
 ## Review
 
-## Technique
+## Technique [entt 中 Component 的存储实现](entt_component_storage.md)
 
 ## Share
