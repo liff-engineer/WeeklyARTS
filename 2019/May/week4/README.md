@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - entt 中 Component 的存储实现
+- Unix 编程艺术之紧凑性和正交性
 - 《争论 C++前你应当知道什么》读后感
 
 ## Algorithm [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
@@ -72,7 +73,9 @@ int longestConsecutive(vector<int>& nums) {
 }
 ```
 
-## Review
+## Review [Unix 编程艺术之紧凑性和正交性](orthogonality.md)
+
+[Chapter 4. Modularity : Compactness and Orthogonality](http://www.faqs.org/docs/artu/ch04s02.html)
 
 ## Technique [entt 中 Component 的存储实现](entt_component_storage.md)
 
@@ -91,3 +94,10 @@ C++标准,或者说标准委员会,考虑的更多是为库开发者提供更好
 同时,对于我们来讲,我们更应该关注于场景,注重设计,而不是沉迷于"炫技".当你确定了设计方向,然后就可以发挥编程语言最大的潜力了.譬如游戏行业目前流行的 Data Oriented Design,以及其实践架构 Entity Component System,当设计思路确定,就可以利用 C++等语言的各种特性来"秀肌肉",我在阅读 entt 源代码时有这种强烈的感觉,entt 针对应用场景应用各种 C++特性尽可能地保持易用性,追求更高的效率. 而 ECS 这种架构,以及 entt 的实现技术是否能应用到目前的工作之中,则需要打一个大大的问号.
 
 总之,我们应当根据具体的应用场景来考量,用 C++等编程语言来解决问题,让编程语言回归价值,而非观念或者"信仰".
+
+## TODO
+
+- [Software Architecture and Design](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ee658093(v%3dpandp.10)>)
+- [Data-Oriented Design - Links and Thoughts](http://www.asawicki.info/news_1422_data-oriented_design_-_links_and_thoughts.html)
+- [Application Design: Data-driven vs Domain-driven](https://passwork.me/info/blog/applicationdesign)
+- [Union-Find Algorithms](https://www.cs.princeton.edu/~rs/AlgsDS07/01UnionFind.pdf)
