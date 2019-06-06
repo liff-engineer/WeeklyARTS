@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 关于 std::any 你所需要知道的
 - C++闭包及 TEPS 的一种应用
 - "人丑"就该多读书
 
@@ -30,7 +31,7 @@ int dominantIndex(vector<int>& nums) {
 }
 ```
 
-## Review [Everything You Need to Know About std::any from C++17](https://www.bfilipek.com/2018/06/any.html)
+## Review [关于 std::any 你所需要知道的](std_any.md)
 
 - [When should I use std::any](https://stackoverflow.com/questions/52715219/when-should-i-use-stdany)
 - [std::any: How, when, and why](https://devblogs.microsoft.com/cppblog/stdany-how-when-and-why/)
