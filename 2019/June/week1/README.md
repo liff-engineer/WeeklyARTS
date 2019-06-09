@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- `function_ref`:可调用对象的非持有引用
+
 ## Algorithm [1006. Clumsy Factorial](https://leetcode.com/problems/clumsy-factorial/)
 
 正整数的阶乘计算方式为`factorial(N)=N*(N-1)*(N-2)....*(1)`.题目中定义了一种`clumsy factorial`操作,对以上的序列计算方式,不再是全部的乘法,而是`*`、`/`、`+`、`-`顺序执行.例如`clumsy(10)=10*9/8+7-6*5/4+3-2*1`.除法结果向下取整.
@@ -128,7 +130,7 @@ int clumsy(int N)
 
 提交之后发现运行结果为 4ms,依然不是最好的.这里可以将`results`和`remains`声明成`constexpr static`,从而避免运行时消耗,即可以 0ms 运行完成.
 
-## Review
+## Review [`function_ref`:可调用对象的非持有引用](function_ref.md)
 
 ## Technique
 
