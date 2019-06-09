@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - `function_ref`:可调用对象的非持有引用
+- `function_ref`实现技术解析
 
 ## Algorithm [1006. Clumsy Factorial](https://leetcode.com/problems/clumsy-factorial/)
 
@@ -132,6 +133,6 @@ int clumsy(int N)
 
 ## Review [`function_ref`:可调用对象的非持有引用](function_ref.md)
 
-## Technique
+## Technique [`function_ref`实现技术解析](function_ref_impl.md)
 
 ## Share
