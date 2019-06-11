@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 算法与 KISS
 - `std::any`实现技术解析
 
 ## Algorithm [71. Simplify Path](https://leetcode.com/problems/simplify-path/)
@@ -80,8 +81,22 @@ string simplifyPath(string path) {
 
 上述实现还是需要非常小心地处理的,不过 C++有`std::getline`,可以根据分隔符将流内容进行拆分.具体可以参考相应实现.
 
-## Review
+## Review [算法与 KISS](algo_kiss.md)
 
 ## Technique [`std::any`实现技术解析](any_impl.md)
 
 ## Share
+
+## TODO
+
+- [Clear, Functional C++ Documentation with Sphinx + Breathe + Doxygen + CMake](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/)
+
+- [A Weakness in the Niebloids](https://thephd.github.io/a-weakness-in-the-niebloids)
+  文中讲述了编译期扩展支持的实现方式及其问题,相应的还有[示例](https://github.com/ThePhD/sol2/blob/develop/examples/source/customization_multiple.cpp).
+
+一些关于`function_ref`的实现方法:
+
+- [foonathan](https://github.com/foonathan/type_safe/blob/master/include/type_safe/reference.hpp#L489-L655)
+- [TartanLlama](https://github.com/TartanLlama/function_ref/blob/master/function_ref.hpp)
+
+而如果只是想使用函数指针,则可以参考[std::is_function](https://en.cppreference.com/w/cpp/types/is_function).
