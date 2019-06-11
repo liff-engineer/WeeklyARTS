@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- `std::any`实现技术解析
+
 ## Algorithm [71. Simplify Path](https://leetcode.com/problems/simplify-path/)
 
 题目要求给定 Unix 风格得绝对路径,计算出规范路径,即不包含`.`、`..`.开头必须是`/`,结尾不能有`/`,且两个路径之间只能有一个`/`分隔.
@@ -80,6 +82,6 @@ string simplifyPath(string path) {
 
 ## Review
 
-## Technique
+## Technique [`std::any`实现技术解析](any_impl.md)
 
 ## Share
