@@ -2,7 +2,57 @@
 
 - 如何检查类型 `T` 是否在模板参数包 `Ts...`中
 
-## Algorithm
+## Algorithm [929. Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)
+
+随机个 easy 的题目轻松一下,题目要求是找出邮箱列表中包含有多少个地址.邮箱包含了`local name`和`domain name`,两者使用`@`分隔开来.邮箱除了小写字母外,还可能包含`.`或者`+`.在`domain name`中这两个字符对地址没有影响.如果存在于`local name`中,则会影响到地址.其中`.`在地址表示中会被移除,而`+`则会将`local name`中后续的字符串移除.
+
+这个题目关键在于如何从邮箱得到地址,处理思路如下:
+
+1. 截取`local name`,遇到`.`跳过,遇到`+`或者`@`跳出
+2. 找到`domain name`位置,查询直到碰到`@`
+3. 保存`domain name`
+
+然后遍历所有邮箱获得地址表示存入`unordered_set`中,最终集合元素个数即为地址个数:
+
+```C++
+int numUniqueEmails(vector<string>& emails) {
+    std::unordered_set<std::string> results;
+
+    auto simplify = [](const std::string &email) -> std::string {
+        std::string result;
+        result.reserve(email.size());
+
+        std::size_t idx = 0ul;
+        //获取local name
+        for (; idx < email.size(); idx++)
+        {
+            if (email[idx] == '.')
+                continue;
+            if (email[idx] == '+' || email[idx] == '@')
+                break;
+            result.push_back(email[idx]);
+        }
+
+        //找到domain name位置
+        for (; idx < email.size(); idx++)
+        {
+            if (email[idx] == '@')
+                break;
+        }
+
+        //获取domain name
+        if (idx < email.size())
+            result.append(email, idx);
+        return result;
+    };
+
+    for (const auto &email : emails)
+    {
+        results.insert(simplify(email));
+    }
+    return results.size();
+}
+```
 
 ## Review
 
