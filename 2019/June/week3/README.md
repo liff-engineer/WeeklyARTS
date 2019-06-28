@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 如何检查类型 `T` 是否在模板参数包 `Ts...`中
+- 项目中的"破窗效应"
 
 ## Algorithm [929. Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)
 
@@ -119,4 +120,12 @@ constexpr bool is_one_of() noexcept {
 return (std::is_same_v<int,int> || std::is_same_v<int,double> || std::is_same_v<int,boool> );
 ```
 
-## Share
+## Share 项目中的"破窗效应"
+
+[破窗效应](https://zh.wikipedia.org/wiki/%E7%A0%B4%E7%AA%97%E6%95%88%E5%BA%94)指的是环境中的不良现象如果被放任存在,就会诱使人们仿效,甚至变本加厉.
+
+为什么想起这个,我所在的项目中最初因为赶进度等因素,导致存在一些比较糟糕的代码.如今多年过去了,一直尝试修改,只是因为没有"赶尽杀绝",新同事竟然能从庞大的代码基中翻出最糟糕的写法,而对那么多好的实现方式"置之不理".
+
+年初费尽心思在项目中实践 Modern CMake,提供了非常完善的文档,结果随着时间的推移,文档维护成为"大问题".你永远不知道团队会提交什么样的东西.而且被发现后也没什么影响.更别说一些存在的问题迟迟不解决.
+
+也不是没有不能发,不过至今为止项目还没迁移到 git,使用`Pull Request`约束也"遥不可及".艰辛.
