@@ -2,7 +2,7 @@
 
 ## Algorithm
 
-## Review [@decorators in Python](https://hackernoon.com/decorators-in-python-8fd0dce93c08)
+## Review [Python 中的修饰器](decorator.md)
 
 ## Technique
 
