@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - Python 中的修饰器
+- 数据库模型关系的设计
 - 进行代码重构的一点儿感想
 
 ## Algorithm [目标和最短子数组问题](leetcode862.md)
