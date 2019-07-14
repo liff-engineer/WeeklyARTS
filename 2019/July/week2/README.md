@@ -1,5 +1,7 @@
 # Weekly ARTS
 
+- 别说 10x 工程师,可能我连 1x 都做不到
+
 ## Algorithm [857. Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)
 
 有`N`个员工,第`i`个员工的才能为`quality[i]`,最小薪酬预期为`wage[i]`.
@@ -66,4 +68,10 @@ double mincostToHireWorkers(std::vector<int>& quality, std::vector<int>& wage, i
 
 ## Technique
 
-## Share
+## Share 别说 10x 工程师,可能我连 1x 都做不到
+
+最近大部门邀请了公司开发管理部的同事为大家分享业界一些成熟的工具、开发模式等等.听了之后,颇有感触. 近些年才开始转 git,Pull Request 也用得甚少,甚至单元测试还需要专门讲一讲. 更别说大家现在的代码库还是数 G 大小,惆怅着怎么解决. 都 9102 年了,还有人抱着 Visual Studio 2010 不放.
+
+在目前的团队,这数年甚至有点儿井底之蛙,各个先进的工具、理念等等没有接触.几十万行的代码仓库"无文档裸奔".做个事情都费劲,还畅想 10x 工程师?我所面临或者观察到的场景是,大部分人连 1x 都做不到,996 固然可恶,但是团队的效率底下也是不可回避的事实,软件开发,哪有不延期的道理?呵呵.
+
+能够保质保量地完成自己的任务,这个应该算是 1x 的要求了吧. 实际上开发观念的落后,知识结构的陈旧,使得我们稳定地 1x 都不一定能做到. 眼高手低的程序员,真的需要睁开眼睛看看.
