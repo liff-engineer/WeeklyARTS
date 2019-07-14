@@ -1,6 +1,7 @@
 # Weekly ARTS
 
 - 富有表现力的 C++模板元编程
+- 在 C++中检测类型是否定义
 - 由 X-Y 问题想到
 
 ## Algorithm [801. Minimum Swaps To Make Sequences Increasing](https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/)
@@ -71,7 +72,7 @@ int minSwap(vector<int>& A, vector<int>& B) {
 
 ## Review [富有表现力的 C++模板元编程](expressive_tmp.md)
 
-## Technique
+## Technique [在 C++中检测类型是否定义](cpp_detect_type_defined.md)
 
 ## Share 由 X-Y 问题想到
 
