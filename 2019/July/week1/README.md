@@ -1,5 +1,6 @@
 # Weekly ARTS
 
+- 富有表现力的 C++模板元编程
 - 由 X-Y 问题想到
 
 ## Algorithm [801. Minimum Swaps To Make Sequences Increasing](https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/)
@@ -68,7 +69,7 @@ int minSwap(vector<int>& A, vector<int>& B) {
 }
 ```
 
-## Review
+## Review [富有表现力的 C++模板元编程](expressive_tmp.md)
 
 ## Technique
 
